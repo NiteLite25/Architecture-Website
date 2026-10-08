@@ -164,7 +164,7 @@ Open Record is an evolving archive of this work, bringing together completed pro
 
 Academic information: Fifth-year Master of Architecture student, University of Miami.
 
-Public contact: slowik.lucas28@gmail.com, displayed as a mailto link.
+Public contact: "Contact information coming soon." Do not display a personal email or mailto link.
 
 Keep the existing About-page image placeholder until an image is selected.
 
