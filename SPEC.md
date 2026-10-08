@@ -301,11 +301,16 @@ Do not substitute stock photography or invented architectural work for missing p
 
 ## Done When
 
-- [ ] The site works on a phone.
-- [ ] The menu reaches every page.
+Verification: phone usability was confirmed by the owner; internal navigation and
+image alt text passed the submission audit. Live signup, login and logout were
+previously confirmed by the owner. Fresh account-flow testing and the deployed
+live-link check have not been repeated in the final audit.
+
+- [x] The site works on a phone.
+- [x] The menu reaches every page.
 - [x] Sign up works.
 - [x] Log in works.
 - [x] Log out works.
 - [x] Typing the address of any protected page ending in .html while signed out sends the visitor to login.html.
-- [ ] Every image has alt text.
+- [x] Every image has alt text.
 - [ ] The live link opens in a new tab or window.
