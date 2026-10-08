@@ -3,7 +3,7 @@
 ## Implementation status
 
 The selected Editorial folio design is implemented in root-level index.html,
-archive.html, notes.html, about.html, login.html and three placeholder project
+archive.html, notes.html, about.html, login.html, Lakeside Classroom and two placeholder project
 records (project-1.html through project-3.html). Home and Archive link to these
 records. Archive search filters titles and visible metadata in the browser;
 specific year, course and work-type categories await owner-approved information.
@@ -91,6 +91,27 @@ Projects are the primary organizational unit.
 The archive should support filters so visitors can browse the collection in different ways. Potential metadata may include year, course and type of work, but actual filter categories and metadata must only be used when the owner provides or approves that information.
 
 Filtering happens in the browser using JavaScript.
+
+### Lakeside Classroom — project-1.html
+
+Replaces Project 001 on Home and Archive. Architect: Lucas Slowik. Year: 2026.
+Location: University of Miami, Coral Gables, Florida.
+Type: Academic / Outdoor Learning Pavilion.
+Status: Completed academic design project (proposal, not constructed).
+
+Lakeside Classroom is an outdoor learning pavilion proposed for the University of Miami campus, positioned along Lake Osceola between Lakeside Village and Eaton Residential College. Designed to accommodate approximately 16 students and an instructor, the project explores how a small architectural intervention can create a sheltered learning environment within the existing campus landscape.
+
+The pavilion is defined by a continuous folded enclosure that forms its walls and roof. The folding geometry establishes a distinctive interior volume while providing protection from sun and rain. Openings and louvers introduce controlled daylight and maintain visual connections to the surrounding landscape.
+
+An elevated platform responds to the site's sloping terrain and emphasizes views toward Lake Osceola. Together, the enclosure, platform, and orientation establish a relationship between the learning environment and its immediate surroundings.
+
+Images: images/lakeside-classroom/. Use exterior-illustration.png as the featured
+thumbnail. Documentation: site-plan, floor-plan, elevations, perspective-sections,
+wall-section and axonometric. Visualizations: exterior-illustration, interior-render,
+aerial-photomontage and ground-photomontage, each shown individually. Design Process:
+preliminary-designs, folding-techniques-01 and folding-techniques-02. All are PNGs.
+Display all 13 without cropping or altering their appearance. Provide descriptive
+alt text and an accessible opt-in image viewer. Projects 002 and 003 stay unchanged.
 
 ### Individual Project Pages
 

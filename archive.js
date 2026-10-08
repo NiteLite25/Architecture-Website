@@ -8,6 +8,6 @@ search?.addEventListener('input', () => {
     item.hidden = !item.textContent.toLowerCase().includes(query);
     if (!item.hidden) visible++;
   });
-  count.textContent = `${visible} of ${items.length} placeholder entries`;
+  count.textContent = `${visible} of ${items.length} entries`;
   document.getElementById('no-results').hidden = visible !== 0;
 });

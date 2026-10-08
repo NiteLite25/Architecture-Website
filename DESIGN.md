@@ -14,7 +14,7 @@ layout. About remains restrained. Login pairs one large image with a compact for
 
 Open Record is the approved archive name. Lucas Slowik is its author/curator.
 The approved home introduction is: "An ongoing record of architectural work, research, and experimentation."
-Project material and the About image remain explicit placeholders. Preserve the existing design.
+Lakeside Classroom uses supplied project images. Remaining project material and the About image retain their placeholders. Preserve the existing design.
 
 ## Concept
 
@@ -105,6 +105,11 @@ Preserve the original aspect ratio whenever possible.
 Captions and metadata should remain visually secondary.
 
 Archive thumbnails can be more standardized for browsing, while Project pages are allowed greater variation in image scale and placement.
+
+Image inspection: supplied drawings and renders may be opened in a labelled native
+dialog with Close, Escape, keyboard focus containment and return, and a full-size
+zoom control. This is an explicit visitor action for image inspection, not an
+unsolicited pop-up. Full-size images scroll within the viewer without alteration.
 
 ## Movement
 

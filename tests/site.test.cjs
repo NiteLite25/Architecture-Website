@@ -57,3 +57,24 @@ test('Signup with automatic confirmation opens Home immediately',async()=>{
   assert.deepEqual(state.calls.at(-1),['redirect','index.html']);
   assert.equal(state.form.elements.password.value,'');
 });
+test('Lakeside Classroom includes thirteen original PNGs in separate project sections',()=>{
+  const html=fs.readFileSync(path.join(root,'project-1.html'),'utf8');
+  const sources=[...html.matchAll(/<img src="([^"]+)" alt="([^"]+)" width="(\d+)" height="(\d+)"/g)];
+  assert.equal(sources.length,13);
+  assert.equal(new Set(sources.map(match=>match[1])).size,13);
+  for(const match of sources){
+    const bytes=fs.readFileSync(path.join(root,match[1]));
+    assert.equal(bytes.subarray(1,4).toString(),'PNG');
+    assert.equal(Number(match[3]),bytes.readUInt32BE(16));
+    assert.equal(Number(match[4]),bytes.readUInt32BE(20));
+  }
+  for(const heading of ['Architectural Documentation','Visualizations','Design Process']) assert.ok(html.includes(heading));
+  assert.match(html,/<dialog id="image-viewer" aria-labelledby="viewer-title">/);
+  for(const page of ['index.html','archive.html']){
+    const content=fs.readFileSync(path.join(root,page),'utf8');
+    assert.match(content,/href="project-1.html" aria-label="Open Lakeside Classroom"/);
+    assert.match(content,/exterior-illustration.png/);
+    assert.ok(content.includes('[ADD: selected project 2 title]'));
+    assert.ok(content.includes('[ADD: selected project 3 title]'));
+  }
+});
