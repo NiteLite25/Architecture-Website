@@ -29,7 +29,9 @@ It is not intended to behave only as a formal employment portfolio. It is also a
 
 The archive belongs to Lucas Slowik, but his name should remain secondary to the identity of the archive.
 
-The archive's final name is TBD and must not be invented.
+The archive name is Open Record. Lucas Slowik is the author/curator.
+
+Approved homepage description: "An ongoing record of architectural work, research, and experimentation."
 
 ## Site Structure
 
@@ -152,7 +154,21 @@ Content:
 - Relevant professional or academic information supplied by the owner
 - Log Out
 
-Do not invent biography, education, employment, contact details or other personal information.
+Approved biography:
+
+Lucas Slowik is a fifth-year Master of Architecture student at the University of Miami. His academic work spans a range of architectural projects, research, and design explorations, reflecting an ongoing interest in understanding architecture through different ideas, methods, and approaches.
+
+Rather than defining his work through a singular architectural philosophy, he approaches each project as an opportunity to explore new possibilities, respond to different conditions, and develop his understanding of design.
+
+Open Record is an evolving archive of this work, bringing together completed projects, ongoing experiments, research, and observations. It serves as a place to document architectural development beyond finished presentations, preserving the ideas, iterations, and processes that contribute to each project.
+
+Academic information: Fifth-year Master of Architecture student, University of Miami.
+
+Public contact: slowik.lucas28@gmail.com, displayed as a mailto link.
+
+Keep the existing About-page image placeholder until an image is selected.
+
+Do not invent additional biography, education, employment, contact details or other personal information.
 
 ## Authentication Gate
 

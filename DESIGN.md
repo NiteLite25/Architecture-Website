@@ -12,8 +12,9 @@ sequence of three framed projects staggered vertically. Archive uses a systemati
 catalogue; project pages use an asymmetric folio. Notes use a spacious reading
 layout. About remains restrained. Login pairs one large image with a compact form.
 
-The archive name, introductory copy, project material and personal details remain
-explicit [ADD: ...] placeholders until supplied or approved by the owner.
+Open Record is the approved archive name. Lucas Slowik is its author/curator.
+The approved home introduction is: "An ongoing record of architectural work, research, and experimentation."
+Project material and the About image remain explicit placeholders. Preserve the existing design.
 
 ## Concept
 

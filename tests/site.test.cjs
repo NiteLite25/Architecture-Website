@@ -14,7 +14,7 @@ test('All page links resolve and pages carry required metadata and scripts', () 
     assert.match(html,/src="config.js"/);
     if(page !== 'login.html') {assert.match(html,/class="auth-pending"/);assert.match(html,/data-logout/);}
     for(const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
-      if (/^(https?:|#|data:)/.test(match[1])) continue;
+      if (/^(https?:|mailto:|#|data:)/.test(match[1])) continue;
       const file = match[1].split('#')[0];
       assert.ok(fs.existsSync(path.join(root,file)),`${page}: missing ${file}`);
     }

@@ -1,4 +1,4 @@
-# Architectural archive
+# Open Record
 
 Plain HTML, CSS and JavaScript. No build step or package installation.
 
@@ -24,13 +24,13 @@ control for confidential project files.
 
 ## Content
 
-The final archive name, copy, images and project metadata remain explicit
+Project copy, images and project metadata remain explicit
 placeholders. Replace them with owner-approved material. Search works on visible
 project titles and metadata; year/course/type filters await approved categories.
 Project pages are development records, not claims of published projects.
 
 The SVG share card is a local typographic placeholder. Replace it with a raster
-share image and an absolute deployed image URL when the name and hosting URL are
+share image and an absolute deployed image URL when the hosting URL is
 approved, for compatibility with social preview services.
 
 ## Verification
