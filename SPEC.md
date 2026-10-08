@@ -90,7 +90,9 @@ Projects are the primary organizational unit.
 
 The archive should support filters so visitors can browse the collection in different ways. Potential metadata may include year, course and type of work, but actual filter categories and metadata must only be used when the owner provides or approves that information.
 
-Filtering happens in the browser using JavaScript.
+Filtering happens in the browser using JavaScript. Search matches titles, metadata
+and approved keywords; "educational" also finds Lakeside Classroom. Empty results
+offer a clear-search control.
 
 ### Lakeside Classroom — project-1.html
 

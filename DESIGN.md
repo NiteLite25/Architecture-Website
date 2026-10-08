@@ -108,8 +108,9 @@ Archive thumbnails can be more standardized for browsing, while Project pages ar
 
 Image inspection: supplied drawings and renders may be opened in a labelled native
 dialog with Close, Escape, keyboard focus containment and return, and a full-size
-zoom control. This is an explicit visitor action for image inspection, not an
-unsolicited pop-up. Full-size images scroll within the viewer without alteration.
+zoom control, plus/minus/reset buttons, wheel/trackpad zoom and drag/pinch gestures.
+This is an explicit visitor action for image inspection, not an
+unsolicited pop-up. Zoomed images can be panned within the viewer without alteration.
 
 ## Movement
 

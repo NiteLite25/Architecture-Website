@@ -1,0 +1,27 @@
+const {test}=require('node:test');
+const assert=require('node:assert/strict');
+const vm=require('node:vm');
+const fs=require('node:fs');
+const path=require('node:path');
+test('Viewer fits, zooms, pans, pinches, resets and returns focus',()=>{
+  const element=()=>({style:{},listeners:{},addEventListener(type,fn){this.listeners[type]=fn;},focus(){this.focused=true;},removeAttribute(){}});
+  const image=Object.assign(element(),{naturalWidth:1200,naturalHeight:900});
+  const area=Object.assign(element(),{clientWidth:600,clientHeight:450,getBoundingClientRect:()=>({left:0,top:0,width:600,height:450}),setPointerCapture(){},hasPointerCapture:()=>true,releasePointerCapture(){}});
+  const controls=Object.fromEntries(['data-zoom-level','data-close-viewer','data-reset','data-zoom-in','data-zoom-out','data-zoom'].map(key=>[key,element()]));
+  const viewer=Object.assign(element(),{querySelector(selector){return selector==='img'?image:selector==='.viewer-image'?area:controls[selector.slice(1,-1)];},showModal(){this.open=true;},close(){this.open=false;this.listeners.close();}});
+  const link=Object.assign(element(),{dataset:{title:'Test image'},querySelector:()=>({src:'test.png',alt:'Test image'})});
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../image-viewer.js'),'utf8'),{document:{getElementById:id=>id==='image-viewer'?viewer:element(),querySelectorAll:()=>[link]},window:element(),Map,Math});
+  link.listeners.click({preventDefault(){}});
+  assert.equal(controls['data-zoom-level'].textContent,'100%');
+  controls['data-zoom-in'].listeners.click();
+  assert.equal(controls['data-zoom-level'].textContent,'125%');
+  const pointer=(id,x,y)=>({pointerId:id,clientX:x,clientY:y,button:0,target:image});
+  area.listeners.pointerdown(pointer(1,200,200));area.listeners.pointermove(pointer(1,220,210));
+  assert.match(image.style.transform,/translate\(20px, 10px\)/);
+  area.listeners.pointerdown(pointer(2,300,200));area.listeners.pointermove(pointer(2,400,200));
+  assert.ok(parseInt(controls['data-zoom-level'].textContent)>125);
+  area.listeners.pointerup(pointer(2,400,200));area.listeners.pointerup(pointer(1,220,210));assert.equal(viewer.open,true);
+  controls['data-reset'].listeners.click();assert.equal(controls['data-zoom-level'].textContent,'100%');
+  area.listeners.wheel({preventDefault(){},clientX:300,clientY:225,deltaY:-100,deltaMode:0});assert.ok(parseInt(controls['data-zoom-level'].textContent)>100);
+  controls['data-reset'].listeners.click();area.listeners.pointerdown(pointer(3,300,225));area.listeners.pointerup(pointer(3,300,225));area.listeners.click({preventDefault(){},stopPropagation(){}});assert.equal(viewer.open,false);assert.equal(link.focused,true);
+});
