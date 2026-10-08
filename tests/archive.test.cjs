@@ -1,0 +1,41 @@
+const {test} = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+test('Archive metadata options, combined case-insensitive matching and reset exclude placeholders', () => {
+  const control = () => ({value:'',options:[],handlers:{},append(option){this.options.push(option);},addEventListener(event,fn){this.handlers[event]=fn;},focus(){this.focused=true;}});
+  const controls = Object.fromEntries(['project-search','project-type','project-year','project-documentation','project-count','no-results'].map(id=>[id,control()]));
+  const html = fs.readFileSync(path.join(__dirname,'../archive.html'),'utf8');
+  const attributes = html.match(/<article data-project[^>]+>/)[0];
+  const dataset = Object.fromEntries([...attributes.matchAll(/data-([a-z]+)="([^"]*)"/g)].map(match=>[match[1],match[2]]));
+  const item = {dataset,textContent:'Lakeside Classroom 2026 Academic / Outdoor Learning Pavilion'};
+  const placeholder = {};
+  const reset = control();
+  const document = {getElementById:id=>controls[id],createElement:()=>({}),querySelectorAll:selector=>selector==='[data-project]'?[item]:selector==='[data-placeholder]'?[placeholder]:[reset]};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../archive.js'),'utf8'),{document});
+  assert.deepEqual(controls['project-year'].options.map(o=>o.value),['2026']);
+  assert.deepEqual(controls['project-documentation'].options.map(o=>o.value),['Design Process','Final Work']);
+  assert.equal(controls['project-type'].options.length,1);
+  for(const term of ['Lakeside','classroom','EDUCATIONAL']) {
+    controls['project-search'].value=term;
+    controls['project-search'].handlers.input();
+    assert.equal(item.hidden,false);
+    assert.equal(placeholder.hidden,true);
+  }
+  controls['project-type'].value='academic / outdoor learning pavilion';
+  controls['project-year'].value='2026';
+  controls['project-documentation'].value='FINAL WORK';
+  controls['project-documentation'].handlers.change();
+  assert.equal(item.hidden,false);
+  controls['project-search'].value='unmatched';
+  controls['project-search'].handlers.input();
+  assert.equal(controls['project-count'].textContent,'0 of 1 project');
+  assert.equal(controls['no-results'].hidden,false);
+  reset.handlers.click();
+  assert.equal(controls['project-count'].textContent,'1 of 1 project');
+  assert.equal(placeholder.hidden,false);
+  assert.equal(controls['no-results'].hidden,true);
+  assert.equal(controls['project-search'].focused,true);
+  for(const id of ['project-search','project-type','project-year','project-documentation']) assert.equal(controls[id].value,'');
+});

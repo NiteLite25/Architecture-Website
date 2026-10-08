@@ -5,8 +5,8 @@
 The selected Editorial folio design is implemented in root-level index.html,
 archive.html, notes.html, about.html, login.html, Lakeside Classroom and two placeholder project
 records (project-1.html through project-3.html). Home and Archive link to these
-records. Archive search filters titles and visible metadata in the browser;
-specific year, course and work-type categories await owner-approved information.
+records. Lakeside Classroom is the only indexed architectural record; the two
+unfinished placeholders retain their links but are excluded from search and filters.
 
 All factual content that has not been supplied remains explicitly marked [ADD:].
 Supabase login, signup, confirmation handling, session checks and logout are wired.
@@ -92,7 +92,10 @@ The archive should support filters so visitors can browse the collection in diff
 
 Filtering happens in the browser using JavaScript. Search matches titles, metadata
 and approved keywords; "educational" also finds Lakeside Classroom. Empty results
-offer a clear-search control.
+offer a reset control. Search combines with project type, year and documentation
+availability filters, with options generated from indexed project metadata. All
+matching is case-insensitive. Display the matching project count; reset clears all
+controls. Lakeside Classroom has Final Work and Design Process documentation.
 
 ### Lakeside Classroom — project-1.html
 

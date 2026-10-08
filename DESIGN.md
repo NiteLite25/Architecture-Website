@@ -83,7 +83,7 @@ Use an underlying responsive 12-column desktop grid to maintain order, but allow
 
 On mobile, collapse the system into a simple one- or two-column arrangement depending on available width.
 
-The Archive page is more systematic than individual Project pages because browsing and filtering must remain easy.
+The Archive page is more systematic than individual Project pages because browsing and filtering must remain easy. Preserve its three-column desktop grid. Compact labelled search, project-type, year and documentation controls wrap on mobile, with a result count and reset option. Unfinished placeholders remain explicitly labelled and are excluded from the project index.
 
 Project pages can behave more like studio walls. Drawings, renders and photographs may vary significantly in size and placement while maintaining generous separation.
 
