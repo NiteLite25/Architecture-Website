@@ -51,3 +51,9 @@ test('Session signout from another tab redirects and a logout failure is shown',
   await state.logout.click({currentTarget:state.logout});assert.match(state.status.textContent,/failed/);assert.equal(state.logout.disabled,false);
   state.auth.state('SIGNED_OUT',null);assert.deepEqual(state.calls.at(-1),['redirect','login.html']);
 });
+test('Signup with automatic confirmation opens Home immediately',async()=>{
+  const state=await run({login:true,signupSession:{user:{id:'test'}}});
+  await state.form.submit({preventDefault(){},submitter:{value:'signup'}});
+  assert.deepEqual(state.calls.at(-1),['redirect','index.html']);
+  assert.equal(state.form.elements.password.value,'');
+});

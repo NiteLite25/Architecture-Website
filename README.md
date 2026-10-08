@@ -6,15 +6,17 @@ Run `node preview-server.cjs` and open http://127.0.0.1:8080.
 
 ## Account configuration
 
-Add your Supabase project URL and **public publishable or anon key** to config.js.
-Never use a secret or service-role key. Enable email/password authentication in
-Supabase and allow your local and deployed login.html URLs as auth redirect URLs.
+The supplied Supabase project URL and public publishable key are in config.js.
+Never use a secret or service-role key. The project's public settings report
+sign-up enabled and automatic email confirmation. If email confirmation is
+enabled later, allow local and deployed login.html URLs as auth redirect URLs.
 Configure the production site URL before inviting visitors.
 
 Missing configuration fails closed: protected pages redirect to login.html,
 where the form explains the setup requirement. There is no preview login or
-authentication bypass. Live signup, confirmation, login and logout must be tested
-with the owner's Supabase project after configuration.
+authentication bypass. The owner confirmed live sign-up, log-in and log-out pass
+on 2026-10-08. Email confirmation is currently automatic; test the confirmation
+email flow if that project setting changes.
 
 This follows SPEC.md's browser authentication gate. Static HTML and image files
 are served publicly by a static host; the browser gate is not server-side access

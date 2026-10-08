@@ -10,9 +10,13 @@ specific year, course and work-type categories await owner-approved information.
 
 All factual content that has not been supplied remains explicitly marked [ADD:].
 Supabase login, signup, confirmation handling, session checks and logout are wired.
-The project URL and public publishable/anon key have not been supplied. Until they
-are added to config.js, protected pages redirect to login.html and its account
-form is disabled with an explanation. Live authentication remains unverified.
+The supplied Supabase project URL and public publishable key are in config.js.
+Protected pages redirect signed-out visitors to login.html. The public account
+form supports email/password signup and login, with email confirmation when
+required by the Supabase project. Public project settings currently report
+sign-up enabled and automatic email confirmation. Signed-out browser checks pass
+for all seven protected pages. On 2026-10-08, the owner confirmed that live
+sign-up, log-in and log-out all pass.
 There is no authentication bypass. See README.md for local startup and setup.
 
 ## What the Site Is
@@ -251,9 +255,9 @@ Do not substitute stock photography or invented architectural work for missing p
 
 - [ ] The site works on a phone.
 - [ ] The menu reaches every page.
-- [ ] Sign up works.
-- [ ] Log in works.
-- [ ] Log out works.
-- [ ] Typing the address of any protected page ending in .html while signed out sends the visitor to login.html.
+- [x] Sign up works.
+- [x] Log in works.
+- [x] Log out works.
+- [x] Typing the address of any protected page ending in .html while signed out sends the visitor to login.html.
 - [ ] Every image has alt text.
 - [ ] The live link opens in a new tab or window.
