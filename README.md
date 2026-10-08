@@ -1,0 +1,38 @@
+# Architectural archive
+
+Plain HTML, CSS and JavaScript. No build step or package installation.
+
+Run `node preview-server.cjs` and open http://127.0.0.1:8080.
+
+## Account configuration
+
+Add your Supabase project URL and **public publishable or anon key** to config.js.
+Never use a secret or service-role key. Enable email/password authentication in
+Supabase and allow your local and deployed login.html URLs as auth redirect URLs.
+Configure the production site URL before inviting visitors.
+
+Missing configuration fails closed: protected pages redirect to login.html,
+where the form explains the setup requirement. There is no preview login or
+authentication bypass. Live signup, confirmation, login and logout must be tested
+with the owner's Supabase project after configuration.
+
+This follows SPEC.md's browser authentication gate. Static HTML and image files
+are served publicly by a static host; the browser gate is not server-side access
+control for confidential project files.
+
+## Content
+
+The final archive name, copy, images and project metadata remain explicit
+placeholders. Replace them with owner-approved material. Search works on visible
+project titles and metadata; year/course/type filters await approved categories.
+Project pages are development records, not claims of published projects.
+
+The SVG share card is a local typographic placeholder. Replace it with a raster
+share image and an absolute deployed image URL when the name and hosting URL are
+approved, for compatibility with social preview services.
+
+## Verification
+
+Run `node --test tests/site.test.cjs`. Tests check internal file links, metadata,
+authentication gates and form/session flows with a mock Supabase client. They do
+not replace a live account test.
