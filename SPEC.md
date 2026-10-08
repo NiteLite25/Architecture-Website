@@ -112,6 +112,12 @@ thumbnail. Documentation: site-plan, floor-plan, elevations, perspective-section
 wall-section and axonometric. Visualizations: exterior-illustration, interior-render,
 aerial-photomontage and ground-photomontage, each shown individually. Design Process:
 preliminary-designs, folding-techniques-01 and folding-techniques-02. All are PNGs.
+Design Process Explorer: Final Work displays the six documentation sheets and four
+renders. Design Process displays only Preliminary Designs (one sheet) and Folding
+Techniques (two slides). Use keyboard-accessible tabs; Final Work is the default.
+Descriptions identify the supplied drawings and folded-paper model studies only.
+Both views use the existing image viewer. Without JavaScript, both remain visible.
+
 Display all 13 without cropping or altering their appearance. Provide descriptive
 alt text and an accessible opt-in image viewer. Projects 002 and 003 stay unchanged.
 

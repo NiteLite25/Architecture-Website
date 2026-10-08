@@ -112,6 +112,10 @@ zoom control, plus/minus/reset buttons, wheel/trackpad zoom and drag/pinch gestu
 This is an explicit visitor action for image inspection, not an
 unsolicited pop-up. Zoomed images can be panned within the viewer without alteration.
 
+Lakeside Classroom has a restrained Final Work / Design Process tab switch. Use
+existing rectangular controls and monochrome active/focus states. Preserve the
+staggered image composition within each view and keep the shared viewer unchanged.
+
 ## Movement
 
 Movement is subtle.
